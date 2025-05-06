@@ -6,13 +6,13 @@
 }
 
 :root {
-    --primary-color: #006400;    /* Verde escuro */
-    --secondary-color: #f1dd28;  /* Amarelo */
-    --accent-color: #ff8c00;     /* Laranja */
+    --primary-color: #004d00;    /* Verde escuro */
+    --secondary-color: #b2df8a;  /* Verde claro */
+    --accent-color: #7cb342;     /* Verde limão */
     --text-color: #333333;       /* Texto escuro */
     --light-text: #ffffff;       /* Texto claro */
-    --background-light: #fffcf0; /* Fundo claro amarelado */
-    --background-green: #e6f2e6; /* Fundo verde claro */
+    --background-light: #f1f8e9; /* Fundo claro esverdeado */
+    --background-green: #e8f5e9; /* Fundo verde claro */
     --border-radius: 8px;
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
@@ -32,21 +32,20 @@ body {
     padding: 0 20px;
 }
 
-.honeycomb-background {
+.leaf-background {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    width: 100%; /* Ocupando apenas o lado direito */
+    width: 100%;
     height: 100%;
-    background-image: url('../img/comeia.png'); /* Substitua pelo caminho da sua imagem */
-    background-size: contain; /* ou cover, dependendo de como quer que a imagem apareça */
+    background-image: url('../img/folha-s.png');
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.50; /* Ajuste a opacidade conforme necessário */
-    z-index: 1; /* Para garantir que fique atrás do conteúdo */
+    opacity: 0.15;
+    z-index: 1;
 }
-
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
@@ -119,7 +118,7 @@ ul, ol {
 }
 
 .btn-cta:hover {
-    background-color: #ff7400;
+    background-color: #689f38;
     transform: translateY(-3px);
     box-shadow: 0 7px 0 rgba(0, 0, 0, 0.2);
 }
@@ -137,7 +136,7 @@ ul, ol {
 }
 
 .btn-offer:hover {
-    background-color: #ffd700;
+    background-color: #a5d6a7;
     transform: translateY(-3px);
     box-shadow: 0 7px 0 rgba(0, 0, 0, 0.1);
 }
@@ -148,7 +147,7 @@ ul, ol {
 }
 
 .btn-offer.popular:hover {
-    background-color: #ff7400;
+    background-color: #689f38;
 }
 
 /* Animação de pulsação para os CTAs */
@@ -170,7 +169,7 @@ ul, ol {
 
 /* Header e Hero */
 .hero {
-    background: linear-gradient(to right, #F1DD28, #F7B733);
+    background: linear-gradient(to right, #c5e1a5, #bce092);
     background-size: cover;
     background-position: center;
     padding: 40px 0 60px;
@@ -190,24 +189,9 @@ ul, ol {
     z-index: 1;
 }
 
-
 .logo {
     text-align: center;
     margin-bottom: 20px;
-}
-
-.honeycomb-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 100%; /* Ajuste a largura conforme necessário */
-    background-image: url('img/colmeia.png'); /* Caminho para sua imagem de colmeia */
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: contain;
-    opacity: 0.15; /* Ajuste a opacidade para não interferir com o texto */
-    z-index: 1; /* Garante que a imagem fique atrás do conteúdo */
 }
 
 .hero-content {
@@ -236,11 +220,11 @@ ul, ol {
 }
 
 .product-image {
-    max-width: 260px;
     filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
 }
-/* Estilos para as abelhas */
-.bee-container {
+
+/* Estilos para as ervas decorativas */
+.herb-container {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -251,33 +235,33 @@ ul, ol {
     overflow: hidden;
 }
 
-.bee {
+.herb {
     position: absolute;
     width: 80px;
     height: 80px;
-    background-image: url('../img/abelha.png');
+    background-image: url('../img/herb-icon.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    animation: floatBee 4s ease-in-out infinite;
-    opacity: 0.9;
+    animation: floatHerb 4s ease-in-out infinite;
+    opacity: 0.8;
 }
 
-.bee-1 {
+.herb-1 {
     top: 19%;
-    left: 35%;
+    left: 12%;
     animation-delay: 0s;
     z-index: 9999;
 }
 
-.bee-2 {
+.herb-2 {
     top: 30%;
-    right: 35%;
-    animation: floatBeeFlipped 4s ease-in-out infinite;
+    right: 15%;
+    animation: floatHerbFlipped 4s ease-in-out infinite;
     z-index: 9999;
 }
 
-@keyframes floatBeeFlipped {
+@keyframes floatHerbFlipped {
     0%, 100% {
         transform: translateY(0) rotate(5deg) scaleX(-1);
     }
@@ -286,7 +270,7 @@ ul, ol {
     }
 }
 
-@keyframes floatBee {
+@keyframes floatHerb {
     0%, 100% {
         transform: translateY(0) rotate(5deg);
     }
@@ -294,6 +278,7 @@ ul, ol {
         transform: translateY(-15px) rotate(-5deg);
     }
 }
+
 .cta-primary {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -313,13 +298,16 @@ ul, ol {
 }
 
 .benefits-grid {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    justify-content: center;
+    gap: 20px;
     margin-bottom: 50px;
 }
 
 .benefit-card {
+    flex: 1 1 250px;
     background-color: #fff;
     border-radius: var(--border-radius);
     padding: 30px 20px;
@@ -350,70 +338,78 @@ ul, ol {
     margin: 40px 0 20px;
 }
 
-/* Seção Científica */
-.science {
-    background-color: var(--background-green);
+/* Seção de Ingredientes */
+.ingredients {
+    background: linear-gradient(
+        to bottom right,
+        #004d00 0%,
+        #007300 50%,
+        #004d00 100%
+    );
     padding: 80px 0;
 }
 
-.science-content {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-top: 40px;
+.ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin: 40px 0;
 }
 
-.science-image {
-    flex: 1;
+.ingredient-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 30px 20px;
     text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
 }
 
-.scientist-image {
-    max-width: 300px;
-    border-radius: 50%;
-    border: 5px solid var(--primary-color);
+.ingredient-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.science-text {
-    flex: 2;
-}
-
-blockquote {
-    font-style: italic;
-    border-left: 4px solid var(--secondary-color);
-    padding-left: 20px;
+.ingredient-image {
+    color: #b2df8a;
     margin-bottom: 20px;
-    font-size: 1.1rem;
+    font-size: 30px;
 }
 
-.expert {
-    font-weight: 700;
+.herb-image {
+    max-width: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--secondary-color);
+}
+
+.ingredient-card h3 {
     color: var(--primary-color);
-    margin-bottom: 30px;
-}
-
-.science-bullets {
-    list-style: none;
-}
-
-.science-bullets li {
+    font-size: 1.3rem;
     margin-bottom: 15px;
-    display: flex;
-    align-items: center;
 }
 
-.science-bullets li::before {
+.ingredient-benefits {
+    list-style-type: none;
+    text-align: left;
+}
+
+.ingredient-benefits li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.ingredient-benefits li::before {
     content: '✓';
-    color: var(--primary-color);
-    font-weight: bold;
-    margin-right: 10px;
-    font-size: 1.2rem;
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
 }
 
 /* Depoimentos */
 .testimonials {
     padding: 80px 0;
-    background: linear-gradient(to right, #F1DD28, #F7B733);
+    background: linear-gradient(to right, #c5e1a5, #aed581);
 }
 
 .testimonials-slider {
@@ -435,7 +431,7 @@ blockquote {
 }
 
 .testimonial-rating {
-    color: var(--secondary-color);
+    color: #ffc107;
     font-size: 1.2rem;
     margin-bottom: 15px;
 }
@@ -614,7 +610,7 @@ blockquote {
 }
 
 .plan-product-image {
-    max-width: 200px;
+    max-width: 300px;
 }
 
 .discount-badge {
@@ -760,7 +756,7 @@ blockquote {
 .final-cta {
     padding: 80px 0;
     background-color: var(--secondary-color);
-    background-image: url('../img/bg-honeycomb.png');
+    background-image: url('../img/bg-folhas.png');
     background-size: cover;
     background-position: center;
 }
@@ -920,7 +916,7 @@ blockquote {
     align-items: center;
     justify-content: center;
     width: 40px;
-    height: 40px;@media
+    height: 40px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     color: var(--light-text);
@@ -973,6 +969,10 @@ blockquote {
         grid-template-columns: repeat(2, 1fr);
     }
     
+    .ingredients-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .plans-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1002,7 +1002,8 @@ blockquote {
         margin-bottom: 30px;
     }
     
-    .benefits-grid {
+    .benefits-grid,
+    .ingredients-grid {
         grid-template-columns: 1fr;
     }
     
@@ -1033,19 +1034,20 @@ blockquote {
 }
 
 @media (max-width: 480px) {
-    .bee-1 {
+    .herb-1 {
         top: 19%;
-        left: 20%;
+        left: 10%;
         animation-delay: 0s;
         z-index: 9999;
     }
     
-    .bee-2 {
+    .herb-2 {
         top: 30%;
         right: 4%;
-        animation: floatBeeFlipped 4s ease-in-out infinite;
+        animation: floatHerbFlipped 4s ease-in-out infinite;
         z-index: 9999;
     }
+    
     .headline {
         font-size: 2rem;
     }
